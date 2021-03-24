@@ -1,0 +1,1199 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "mein adjuvant",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloWorldIntent",
+                    "slots": [],
+                    "samples": [
+                        "hallo"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetIntent",
+                    "slots": [],
+                    "samples": [
+                        "schicke alle meine Termine"
+                    ]
+                },
+                {
+                    "name": "StoreFrequent",
+                    "slots": [
+                        {
+                            "name": "remind",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME"
+                        },
+                        {
+                            "name": "frequency",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "weekDay",
+                            "type": "AMAZON.DayOfWeek"
+                        }
+                    ],
+                    "samples": [
+                        "speichere einen Termin daheim",
+                        "speichere einen Termin zuhause",
+                        "speichere einen Termin im Haus",
+                        "erinner mich daheim",
+                        "erinner mich zuhause",
+                        "erinner mich im Haus",
+                        "erinner mich an einen Termin daheim",
+                        "erinner mich an einen Termin zuhause",
+                        "erinnner mich an einen Termin im Haus",
+                        "merke dir einen Termin daheim",
+                        "merke dir einen Termin zuhause",
+                        "merke dir einen Termin im Haus"
+                    ]
+                },
+                {
+                    "name": "StoreOutdoorIntent",
+                    "slots": [
+                        {
+                            "name": "frequency",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "toStore",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME"
+                        },
+                        {
+                            "name": "fromCity",
+                            "type": "AMAZON.DE_CITY"
+                        },
+                        {
+                            "name": "fromStreet",
+                            "type": "AMAZON.StreetName"
+                        },
+                        {
+                            "name": "fromNumber",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        },
+                        {
+                            "name": "toCity",
+                            "type": "AMAZON.DE_CITY"
+                        },
+                        {
+                            "name": "toStreet",
+                            "type": "AMAZON.StreetName"
+                        },
+                        {
+                            "name": "toNumber",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "wayOfTransport",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "Merke dir was außer Haus",
+                        "merke dir einen Termin außer Haus"
+                    ]
+                },
+                {
+                    "name": "StoreContactIntent",
+                    "slots": [
+                        {
+                            "name": "firstPart",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "secondPart",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "füge eine Kontaktperson hinzu"
+                    ]
+                },
+                {
+                    "name": "DeleteIntent",
+                    "slots": [
+                        {
+                            "name": "toDelete",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME"
+                        }
+                    ],
+                    "samples": [
+                        "lösche was"
+                    ]
+                },
+                {
+                    "name": "GetAlphabetIntent",
+                    "slots": [],
+                    "samples": [
+                        "ich will eine Kontakperson abspeichern"
+                    ]
+                },
+                {
+                    "name": "RouteRequestIntent",
+                    "slots": [
+                        {
+                            "name": "originAddress",
+                            "type": "AMAZON.StreetName"
+                        },
+                        {
+                            "name": "originAddressHouseNumber",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "originAddressCity",
+                            "type": "AMAZON.City"
+                        },
+                        {
+                            "name": "destinationAddress",
+                            "type": "AMAZON.StreetName"
+                        },
+                        {
+                            "name": "destinationAddressHouseNumber",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        },
+                        {
+                            "name": "destinationAddressCity",
+                            "type": "AMAZON.City"
+                        },
+                        {
+                            "name": "mode",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "führe eine Routenberechnung durch."
+                    ]
+                },
+                {
+                    "name": "GetAllIntent",
+                    "slots": [],
+                    "samples": [
+                        "lese alle Termine aus"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "StoreFrequent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "remind",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1309610608654.243990415259",
+                                "elicitation": "Elicit.Slot.1309610608654.243990415259"
+                            }
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1309610608654.314590034490",
+                                "elicitation": "Elicit.Slot.1309610608654.314590034490"
+                            }
+                        },
+                        {
+                            "name": "frequency",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1309610608654.447330080946",
+                                "elicitation": "Elicit.Slot.1309610608654.447330080946"
+                            },
+                            "validations": [
+                                {
+                                    "type": "isInSet",
+                                    "prompt": "Slot.Validation.958917713096.1187726742986.920030502687",
+                                    "values": [
+                                        "täglich",
+                                        "einmalig",
+                                        "wöchentlich"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.326582396076.390715995352",
+                                "elicitation": "Elicit.Slot.326582396076.390715995352"
+                            }
+                        },
+                        {
+                            "name": "weekDay",
+                            "type": "AMAZON.DayOfWeek",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.958917713096.1175486595300",
+                                "elicitation": "Elicit.Slot.958917713096.1175486595300"
+                            },
+                            "validations": [
+                                {
+                                    "type": "isInSet",
+                                    "prompt": "Slot.Validation.958917713096.1175486595300.875590189983",
+                                    "values": [
+                                        "Weiter",
+                                        "Freitag",
+                                        "Samstag",
+                                        "Montag",
+                                        "Mittwoch",
+                                        "Donnerstag",
+                                        "Dienstag",
+                                        "Sonntag"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "StoreOutdoorIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "frequency",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.972394375787.1367256194906",
+                                "elicitation": "Elicit.Slot.972394375787.1367256194906"
+                            },
+                            "validations": [
+                                {
+                                    "type": "isInSet",
+                                    "prompt": "Slot.Validation.972394375787.1367256194906.1608612748994",
+                                    "values": [
+                                        "mittwoch",
+                                        "dienstag",
+                                        "sonntag",
+                                        "weiter",
+                                        "täglich",
+                                        "montag",
+                                        "donnerstag",
+                                        "freitag",
+                                        "samstag"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "toStore",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1372635400629.1336877440447",
+                                "elicitation": "Elicit.Slot.1372635400629.1336877440447"
+                            }
+                        },
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.972394375787.76811829393",
+                                "elicitation": "Elicit.Slot.972394375787.76811829393"
+                            }
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1372635400629.737659668754",
+                                "elicitation": "Elicit.Slot.1372635400629.737659668754"
+                            }
+                        },
+                        {
+                            "name": "fromCity",
+                            "type": "AMAZON.DE_CITY",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1372635400629.1455828626231",
+                                "elicitation": "Elicit.Slot.1372635400629.1455828626231"
+                            }
+                        },
+                        {
+                            "name": "fromStreet",
+                            "type": "AMAZON.StreetName",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1372635400629.35977339043",
+                                "elicitation": "Elicit.Slot.1372635400629.35977339043"
+                            }
+                        },
+                        {
+                            "name": "fromNumber",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1372635400629.452360957324",
+                                "elicitation": "Elicit.Slot.1372635400629.452360957324"
+                            }
+                        },
+                        {
+                            "name": "toCity",
+                            "type": "AMAZON.DE_CITY",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1372635400629.384608052120",
+                                "elicitation": "Elicit.Slot.1372635400629.384608052120"
+                            }
+                        },
+                        {
+                            "name": "toStreet",
+                            "type": "AMAZON.StreetName",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1372635400629.1394005186885",
+                                "elicitation": "Elicit.Slot.1372635400629.1394005186885"
+                            }
+                        },
+                        {
+                            "name": "toNumber",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1372635400629.1416657765250",
+                                "elicitation": "Elicit.Slot.1372635400629.1416657765250"
+                            }
+                        },
+                        {
+                            "name": "wayOfTransport",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.972394375787.279876881787",
+                                "elicitation": "Elicit.Slot.972394375787.279876881787"
+                            },
+                            "validations": [
+                                {
+                                    "type": "isInSet",
+                                    "prompt": "Slot.Validation.972394375787.279876881787.769286182396",
+                                    "values": [
+                                        "fahrrad",
+                                        "auto",
+                                        "laufen",
+                                        "öffentliche"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "StoreContactIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.947520741994"
+                    },
+                    "slots": [
+                        {
+                            "name": "firstPart",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.947520741994.939786426548"
+                            }
+                        },
+                        {
+                            "name": "secondPart",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.947520741994.93921364390"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "DeleteIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "toDelete",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.320656855472.1031051655819",
+                                "elicitation": "Elicit.Slot.320656855472.1031051655819"
+                            }
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.834347237408.351710157125",
+                                "elicitation": "Elicit.Slot.834347237408.351710157125"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "RouteRequestIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.1283734203719"
+                    },
+                    "slots": [
+                        {
+                            "name": "originAddress",
+                            "type": "AMAZON.StreetName",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1283734203719.863604894961",
+                                "elicitation": "Elicit.Slot.1283734203719.863604894961"
+                            }
+                        },
+                        {
+                            "name": "originAddressHouseNumber",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1283734203719.713080052788",
+                                "elicitation": "Elicit.Slot.1283734203719.713080052788"
+                            }
+                        },
+                        {
+                            "name": "originAddressCity",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.908318842955.630641919816",
+                                "elicitation": "Elicit.Slot.908318842955.630641919816"
+                            }
+                        },
+                        {
+                            "name": "destinationAddress",
+                            "type": "AMAZON.StreetName",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1283734203719.1513279948926",
+                                "elicitation": "Elicit.Slot.1283734203719.1513279948926"
+                            }
+                        },
+                        {
+                            "name": "destinationAddressHouseNumber",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1283734203719.1101789651415",
+                                "elicitation": "Elicit.Slot.1283734203719.1101789651415"
+                            }
+                        },
+                        {
+                            "name": "destinationAddressCity",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.908318842955.1523703741482",
+                                "elicitation": "Elicit.Slot.908318842955.1523703741482"
+                            }
+                        },
+                        {
+                            "name": "mode",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1283734203719.1122285814337",
+                                "elicitation": "Elicit.Slot.1283734203719.1122285814337"
+                            },
+                            "validations": [
+                                {
+                                    "type": "isInSet",
+                                    "prompt": "Slot.Validation.1283734203719.1122285814337.1359685298608",
+                                    "values": [
+                                        "Auto",
+                                        "öffentlicher Nahverkehr",
+                                        "Fußweg",
+                                        "Fahrrad"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.939285681142.1273606783601",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Was soll ich mir merken?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.939285681142.1273606783601",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{toStore} . Passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.939285681142.1575963272135",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Um wieviel Uhr?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.939285681142.1575963272135",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Um {time} . Passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1309610608654.243990415259",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "woran willst du errinert werden"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1309610608654.314590034490",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "um wie viel Uhr?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1309610608654.243990415259",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{remind} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1309610608654.314590034490",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{time} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1309610608654.447330080946",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ist der Termin Einmalig, Täglich oder Wöchentlich?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1309610608654.447330080946",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{frequency} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1372635400629.1336877440447",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "An welchen Termin soll ich dich erinnern?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1372635400629.1336877440447",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Du möchtest folgenden Termin speichern {toStore} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1372635400629.737659668754",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Um welche Uhrzeit soll der Termin stattfinden?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1372635400629.737659668754",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{time} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1372635400629.1455828626231",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Von welcher Stadt aus gehst du zum Termin?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1372635400629.1455828626231",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{fromCity} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1372635400629.35977339043",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Von welcher Straße aus startest du?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1372635400629.452360957324",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Welche Hausnummer hat dein Startpunkt?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1372635400629.452360957324",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{fromNumber} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1372635400629.384608052120",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "In welcher Stadt soll der Termin stattfinden?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1372635400629.384608052120",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{toCity} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1372635400629.1394005186885",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "In welche Straße möchtest du?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1372635400629.1394005186885",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{toStreet} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1372635400629.1416657765250",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Zu welcher Hausnummer willst du?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1372635400629.1416657765250",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{toNumber} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1372635400629.35977339043",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{fromStreet} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.326582396076.390715995352",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Falls der Termin nicht einmalig ist sagen sie gestern, ansonsten nennen sie den Tag."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.326582396076.390715995352",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{date} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.947520741994.939786426548",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Buchstabieren Sie den ersten Teil der EMail."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.947520741994",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{firstPart} et {secondPart} . Passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.947520741994.93921364390",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Buchstabieren Sie den zweiten Teil der EMail."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.320656855472.1031051655819",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Was soll gelöscht werden?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.320656855472.1031051655819",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{toDelete} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1112001503707.896368499536",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte geben sie die Strasse der Startadresse an."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1112001503707.896368499536",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{strasse} . Passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.958917713096.1187726742986.920030502687",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Das ist keine zulässige antwort"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.958917713096.1175486595300.875590189983",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Das ist keine zulässige antwort, nennen sie einen Wochentag"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.958917713096.1175486595300",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Sollte der Termin nicht wöchentlich sein sagen sie weiter, ansonsten nennen sie den Wochentag."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.958917713096.1175486595300",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{weekDay} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1283734203719",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Sind der Startort {originAddress} {originAddressHouseNumber} in {originAddressCity} und der Zielort {destinationAddress} {destinationAddressHouseNumber} in {destinationAddressCity} mit dem Transportmittel {mode} korrekt?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1283734203719.863604894961",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ist die Straße {originAddress} für den Startort korrekt?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1283734203719.863604894961",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte geben Sie die Straße des Startortes an."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1283734203719.713080052788",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte geben Sie die Hausnummer des Startortes an."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1283734203719.713080052788",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ist die Hausnummer {originAddressHouseNumber} für den Startort korrekt?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1283734203719.1513279948926",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte geben Sie die Straße des Zielortes an."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1283734203719.1513279948926",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ist die Adresse {destinationAddress} für den Zielort korrekt?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1283734203719.1101789651415",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte geben Sie die Hausnummer des Zielortes an."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1283734203719.1101789651415",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ist die Hausnummer {destinationAddressHouseNumber} für den Zielort korrekt?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1283734203719.1122285814337",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte geben Sie das zu nutzende Transportmittel an. Sie können aus den Möglichkeiten Fußweg, Fahrrad, öffentlicher Nahverkehr oder Auto wählen."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1283734203719.1122285814337",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ist das zu nutzende Transportmittel {mode} korrekt?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1283734203719.1122285814337.1359685298608",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte wählen Sie aus den Möglichkeiten Fußweg, Fahrrad, öffentlicher Nahverkehr oder Auto das gewünschte Transportmittel aus."
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.314379102297.674118217213.1273214380390",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte nochmal"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.972394375787.76811829393",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{date} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.972394375787.76811829393",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Handelt es sich um einen regelmäßigen Termin gib bitte ein beliebiges Datum an, sag zum Beispiel heute, ansonsten gib bitte das konkrete Datum des Termins an"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.972394375787.1367256194906",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Handelt es sich um einen einmaligen Termin, sag bitte weiter. Für einen täglichen Termin sag täglich und für einen wöchentlichen nenne bitte den Wochentag."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.972394375787.1367256194906",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{frequency} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.972394375787.1367256194906.1608612748994",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte sag weiter falls der Termin einmalig ist, täglich für tägliche Termine oder den gewünschten Wochentag für wöchentliche Termine."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.972394375787.279876881787",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Wie möchtest du zu deinem Termin gelangen. Möchtest du zu Fuß gehen sag laufen, möchtest du öffenliche Verkehrsmittel nutzen sag  Öffentliche, falls zu mit dem Auto fahren willst sage Auto und falls du mit dem Fahrrad fahren möchtest sage Fahrrad."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.972394375787.279876881787",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{wayOfTransport} passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.972394375787.279876881787.769286182396",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte wähle eine der folgenden Angaben. Auto, Laufen, Öffentliche, Fahrrad"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.834347237408.351710157125",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Um wieviel Uhr findet der Termin statt?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.834347237408.351710157125",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{time} . Passt das?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.908318842955.630641919816",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte geben Sie die Stadt des Startortes an."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.908318842955.630641919816",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ist die Stadt {originAddressCity} für den Startort korrekt?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.908318842955.1523703741482",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bitte geben Sie die Stadt des Zielortes an."
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.908318842955.1523703741482",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ist die Stadt {destinationAddressCity} für den Zielort korrekt?"
+                    }
+                ]
+            }
+        ]
+    }
+}

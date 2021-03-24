@@ -1,0 +1,50 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:eu-central-1:051886484530:function:GreedingsFunc"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa::profile:email:read"
+      },
+      {
+        "name": "alexa::alerts:reminders:skill:readwrite"
+      }
+    ],
+    "privacyAndCompliance": {
+      "locales": {
+        "de-DE": {}
+      }
+    },
+    "publishingInformation": {
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "category": "ORGANIZERS_AND_ASSISTANTS",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "de-DE": {
+          "description": "Adjuvant kombiniert mehrere Hilfestellungen um den Benutzern möglichst den Alltag zu erleichtern. Dabei ist Adjuvant nicht nur ein einfaches Terminverwaltungstool, sondern bietet auch Untertützung bei Routenberechnung und Routenplanung zu gewünschten Zieladressen und ermöglicht einfaches Abschicken von eigenen Terminen an beliebige E-Mail Adressen.",
+          "examplePhrases": [
+            "Alexa öffne mein Adjuvant.",
+            "Alexa speichere einen Termin zuhause mit mein Adjuvant.",
+            "Alexa merke dir was außer Haus mit mein Adjuvant"
+          ],
+          "keywords": [],
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/fcce/4bc4f295e5e74eab9c4efc842ece347d/APP_ICON_LARGE?versionId=tvFw7cJXZIkYHM_pixutzIsEE97J.U8X&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210130T161814Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86399&X-Amz-Credential=AKIAWBV6LQ4QKQTYKJJO%2F20210130%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=efc788b75204d65b72246c8d92dc2c1b48bd08922cd66bf31e7d9c7cfa641547",
+          "name": "Adjuvant",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/ad69/3d7e14cc426e4ca7adae3d501d416d7f/APP_ICON?versionId=qMPu66huh0rrNLVZF5E5SWZpHNWG8M.q&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210130T161814Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAWBV6LQ4QKQTYKJJO%2F20210130%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=66b042facfec7592e55f06d6bf57776172c8da1ffe7fb946a0d49f9e9129ad3a",
+          "summary": "Adjuvant ist ein Skill, der Nutzer bei ihrer Terminverwaltung unterstützt."
+        }
+      },
+      "testingInstructions": "Sample Testing Instructions."
+    }
+  }
+}

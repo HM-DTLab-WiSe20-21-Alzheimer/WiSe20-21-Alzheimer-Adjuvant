@@ -1,0 +1,56 @@
+image: maven:3.6.3-openjdk-11-slim
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+cache:
+  paths:
+    - .m2/repository/
+
+stages:
+  - compile
+  - evaluation
+  - deploy
+
+Compile:
+  stage: compile
+  script:
+    - mvn clean compile package
+  artifacts:
+    paths:
+      - target/
+    expire_in: 1 week
+
+Test:
+  stage: evaluation
+  script:
+    - mvn clean test
+
+Style:
+  stage: evaluation
+  script:
+    - mvn clean verify -Dmaven.test.failure.ignore=true -Dcheckstyle.failOnViolation=true -Dcheckstyle.violationSeverity=warning
+
+Sonar:
+  stage: evaluation
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - mvn verify test sonar:sonar -Dsonar.qualitygate.wait=true
+  allow_failure: true
+  only:
+    - master
+
+Deploy:
+  stage: deploy
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
+  only:
+    - master
+  script:
+    - aws sts get-caller-identity
+    - aws lambda update-function-code --function-name "GreedingsFunc" --publish --zip-file "fileb://./target/Adjuvant-1.0.0.jar"
